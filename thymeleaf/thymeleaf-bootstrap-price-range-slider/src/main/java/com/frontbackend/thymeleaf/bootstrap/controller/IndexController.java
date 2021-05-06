@@ -8,23 +8,23 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.frontbackend.thymeleaf.bootstrap.model.PriceRange;
-import com.frontbackend.thymeleaf.bootstrap.service.ProductService;
+import com.frontbackend.thymeleaf.bootstrap.service.ComputerService;
 
 @Controller
 @RequestMapping({ "/", "/index" })
 public class IndexController {
 
-    private final ProductService productService;
+    private final ComputerService computerService;
 
     @Autowired
-    public IndexController(ProductService productService) {
-        this.productService = productService;
+    public IndexController(ComputerService computerService) {
+        this.computerService = computerService;
     }
 
     @GetMapping
     public String main(Model model) {
-        model.addAttribute("priceRange", new PriceRange(5, 100));
-        model.addAttribute("products", productService.getMockedProducts());
+        model.addAttribute("priceRange", new PriceRange(5, 100000));
+        model.addAttribute("products", computerService.getAllComputers());
         return "index";
     }
 
