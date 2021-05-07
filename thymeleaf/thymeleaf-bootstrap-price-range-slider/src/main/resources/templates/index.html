@@ -12,67 +12,170 @@
     <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
     <script th:rel="stylesheet" th:src="@{assets/bootstrap-slider/bootstrap-slider.js}"></script>
     <script th:rel="stylesheet" th:src="@{assets/bootstrap-slider/main.js}"></script>
+
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <title>Գլխավոր</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link th:rel="stylesheet" th:href="@{assets/bootstrap-slidercss/bootstrap.min.css}"/>
+    <link th:rel="stylesheet" th:href="@{assets/bootstrap-slider/css/style.css}"/>
+    <link th:rel="stylesheet" th:href="@{assets/bootstrap-slider/css/responsive.css}"/>
+
+    <link th:rel="stylesheet" th:href="@{assets/bootstrap-slider/images/fevicon.png}" type="image/gif"/>
+
+
+    <link th:rel="stylesheet" th:href="@{assets/bootstrap-slider/css/jquery.mCustomScrollbar.min.css}"/>
+
+
+    <link th:rel="stylesheet" th:href="@{https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css}"/>
+
+
+    <link th:rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css}"/>
+
+
+    <link th:rel="stylesheet" th:href="@{assets/bootstrap-slider/css/owl.carousel.min.css}"/>
+
+    <link th:rel="stylesheet" th:href="@{assets/bootstrap-slider/css/owl.theme.default.min.css}"/>
+
+    <link th:rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css}" th:media="screen"/>
+
+
 </head>
 <body>
 
-<!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
-    <div class="container">
-        <a class="navbar-brand" href="/">Thymeleaf - Bootstrap Price Range Slider</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
-                aria-controls="navbarResponsive"
-                aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home
-                        <span class="sr-only">(current)</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Services</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
+<!--<div class="loader_bg">-->
+<!--    <div class="loader"><img th:src="@{assets/bootstrap-slider/images/loading.gif}" alt="#"/></div>-->
+<!--</div>-->
 
-<div class="container">
+<header>
+    <div class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col logo_section">
+                    <div class="full">
+                        <div class="center-desk">
 
-    <div class="row">
-        <div class="col">
-
-            <form method="post" th:object="${priceRange}">
-                <div class="form-group mt-5">
-                    <label for="priceRange">Filter products by price</label>
-                    <div class="form-control">
-                        <b class="mr-2">€ 10</b> <input id="priceRange" type="text" class="span2" value=""
-                                                        data-slider-min="1"
-                                                        data-slider-max="100000" data-slider-step="2"
-                                                        data-slider-value="[5,100000]" data-slider-tooltip="show"/> <b
-                            class="ml-2">€ 100000</b>
-                        <input type="hidden" id="rangeMin" th:field="*{min}"/>
-                        <input type="hidden" id="rangeMax" th:field="*{max}"/>
+                        </div>
                     </div>
                 </div>
-
-                <div id="products" class="mb-3">
-                    <div th:replace="products :: list"></div>
+                <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9">
+                    <div class="menu-area">
+                        <div class="limit-box">
+                            <nav class="main-menu">
+                                <ul class="menu-area-main">
+                                    <li class="active"><a th:href="@{index.html}">Գլխավոր</a></li>
+                                    <li><a th:href="@{assets/bootstrap-slider/templates/about.html}">Մեր մասին</a></li>
+                                    <li><a th:href="@{assets/bootstrap-slider/templates/brand.html}"> Համակարգիչներ</a></li>
+                                    <li><a th:href="@{assets/bootstrap-slider/templates/special.html}">Ակցիաներ</a></li>
+                                    <li><a th:href="@{assets/bootstrap-slider/templates/contact.html}">Կապ</a></li>
+                                    <li class="last">
+                                        <a href="#"><img th:src="@{assets/bootstrap-slider/images/search_icon.png}" alt="icon"/></a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
                 </div>
+                <div class="col-md-6 offset-md-6">
+                    <div class="location_icon_bottum">
+                        <ul>
+                            <li><img th:src="@{icon/call.png}"/>(+374)98000999</li>
 
-                <button class="btn btn-primary" type="submit">Submit form</button>
-            </form>
-
+                            <li><img th:src="@{icon/email.png}"/>computers@gmail.com</li>
+                            <li><img th:src="@{icon/loc.png}"/>Location</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+</header>
+
+
+<section class="slider_section">
+    <div id="myCarousel" class="carousel slide banner-main" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="first-slide" th:src="@{assets/bootstrap-slider/images/banner.jpg}" alt="First slide">
+                <div class="container">
+                    <div class="carousel-caption relative">
+                        <span>Բոլոր նոր համակարգիչները</span>
+                        <h1> 25% զեղչով</h1>
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img class="second-slide" th:src="@{assets/bootstrap-slider/images/banner1.jpg}" alt="Second slide">
+                <div class="container">
+                    <div class="carousel-caption relative">
+                        <span>Բոլոր նոր համակարգիչները</span>
+                        <h1> 25% զեղչով</h1>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                <i class='fa fa-angle-left'></i>
+            </a>
+            <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                <i class='fa fa-angle-right'></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+
+<div class="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-5 col-lg-5 col-md-5 co-sm-l2">
+                <div class="about_img">
+                    <figure><img th:src="@{assets/bootstrap-slider/images/about.jpg}" alt="img"/></figure>
+                </div>
+            </div>
+            <div class="col-xl-7 col-lg-7 col-md-7 co-sm-l2">
+                <div class="about_box">
+                    <h3>Մեր մասին</h3>
+
+                    <p>ընկերության գործունեությունը սկիզբ է առել 2003 թվականի նոյեմբեր ամսին, երբ Երևանի Թումանյան
+                        փողոցում բացվեց ընկերության առաջին խանութը:</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- brand -->
+<div class="brand">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="titlepage">
+                    <h2>համակարգիչներ</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="products" class="mb-3">
+        <div th:replace="products :: list"></div>
+    </div>
+
+    <button class="btn btn-primary" type="submit">Submit form</button>
+    </form>
+
+</div>
+</div>
 </div>
 </body>
 </html>
