@@ -11,7 +11,7 @@ import com.frontbackend.thymeleaf.bootstrap.model.PriceRange;
 import com.frontbackend.thymeleaf.bootstrap.service.ComputerService;
 
 @Controller
-@RequestMapping({ "/", "/index" })
+@RequestMapping({"/", "/index"})
 public class IndexController {
 
     private final ComputerService computerService;
@@ -23,10 +23,10 @@ public class IndexController {
 
     @GetMapping
     public String main(Model model) {
-        model.addAttribute("priceRange", new PriceRange(5, 100000));
-        model.addAttribute("products", computerService.getAllComputers());
+
         return "index";
     }
+
 
     @PostMapping
     public String save(PriceRange priceRange, Model model) {
@@ -34,22 +34,26 @@ public class IndexController {
         return "saved";
     }
 
+
     @GetMapping("/contact")
-    public String getContacts(){
+    public String getContacts() {
         return "contact";
     }
 
     @GetMapping("/special")
-    public String getSales(){
+    public String getSales() {
         return "special";
     }
+
     @GetMapping("/brand")
-    public String getBrand(){
+    public String getBrand(Model model) {
+        model.addAttribute("priceRange", new PriceRange(5, 100000));
+        model.addAttribute("products", computerService.getAllComputers());
         return "brand";
     }
 
     @GetMapping("/about")
-    public String getAboutInfo(){
+    public String getAboutInfo() {
         return "about";
     }
 }

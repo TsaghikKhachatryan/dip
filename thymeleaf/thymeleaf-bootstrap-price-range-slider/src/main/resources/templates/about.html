@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <!-- basic -->
@@ -14,21 +14,21 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- bootstrap css -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/bootstrap-slider/css/bootstrap.min.css">
     <!-- style css -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="assets/bootstrap-slider/css/style.css">
     <!-- Responsive-->
-    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="assets/bootstrap-slider/css/responsive.css">
     <!-- fevicon -->
-    <link rel="icon" href="images/fevicon.png" type="image/gif" />
+    <link rel="icon" href="assets/bootstrap-slider/images/fevicon.png" type="image/gif" />
     <!-- Scrollbar Custom CSS -->
-    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+    <link rel="stylesheet" href="assets/bootstrap-slider/css/jquery.mCustomScrollbar.min.css">
     <!-- Tweaks for older IEs-->
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
     <!-- owl stylesheets -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="assets/bootstrap-slider/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/bootstrap-slider/css/owl.theme.default.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -39,7 +39,7 @@
 <body class="main-layout">
     <!-- loader  -->
     <div class="loader_bg">
-        <div class="loader"><img src="images/loading.gif" alt="#" /></div>
+        <div class="loader"><img src="assets/bootstrap-slider/images/loading.gif" alt="#" /></div>
     </div>
     <!-- end loader -->
     <!-- header -->
@@ -61,13 +61,15 @@
                             <div class="limit-box">
                                 <nav class="main-menu">
                                     <ul class="menu-area-main">
-                                       <li class="active"> <a href="index.html">Գլխավոր</a> </li>
-                                        <li> <a href="about.html">Մեր մասին</a> </li>
-                                        <li><a href="brand.html"> Համակարգիչներ</a></li>
-                                        <li><a href="special.html">Ակցիաներ</a></li>
-                                        <li><a href="contact.html">Կապ</a></li>
+                                        <li class="active"><a th:href="@{index}">Գլխավոր</a></li>
+                                        <li><a th:href="@{about}">Մեր մասին</a></li>
+                                        <li><a th:href="@{brand}"> Համակարգիչներ</a>
+                                        </li>
+                                        <li><a th:href="@{special}">Ակցիաներ</a></li>
+                                        <li><a th:href="@{contact}">Կապ</a></li>
                                         <li class="last">
-                                            <a href="#"><img src="images/search_icon.png" alt="icon" /></a>
+                                            <a href="#"><img th:src="@{assets/bootstrap-slider/images/search_icon.png}"
+                                                             alt="icon"/></a>
                                         </li>
                                     </ul>
                                 </nav>
@@ -107,7 +109,7 @@
             <div class="row">
                 <div class="col-xl-5 col-lg-5 col-md-5 co-sm-l2">
                     <div class="about_img">
-                        <figure><img src="images/about.jpg" alt="img" /></figure>
+                        <figure><img src="assets/bootstrap-slider/images/about.jpg" alt="img" /></figure>
                     </div>
                 </div>
                 <div class="col-xl-7 col-lg-7 col-md-7 co-sm-l2">
@@ -126,7 +128,7 @@
                 </div>
                 <div class="col-xl-5 col-lg-5 col-md-5 co-sm-l2">
                     <div class="about_img">
-                        <figure><img src="images/nkar.jpg" alt="img" /></figure>
+                        <figure><img src="assets/bootstrap-slider/images/nkar.jpg" alt="img" /></figure>
                     </div>
                 </div>
             </div>
@@ -155,13 +157,13 @@
 
                             </ul>
                             <div class="menu-bottom">
-                                <ul class="link">
-                                   <li> <a href="#">Գլխավոր</a></li>
-                                    <li> <a href="#">Մեր մասին</a></li>
-                                    
-                                    <li> <a href="#">Համակարգիչներ</a></li>
-                                    <li> <a href="#">Ակցիաներ</a></li>
-                                    <li> <a href="#"> Կապ</a></li>
+                                <ul class="menu-area-main">
+                                    <li class="active"><a th:href="@{index}">Գլխավոր</a></li>
+                                    <li><a th:href="@{about}">Մեր մասին</a></li>
+                                    <li><a th:href="@{brand}"> Համակարգիչներ</a>
+                                    </li>
+                                    <li><a th:href="@{special}">Ակցիաներ</a></li>
+                                    <li><a th:href="@{contact}">Կապ</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -173,33 +175,17 @@
     </footer>
     <!-- end footer -->
     <!-- Javascript files-->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/jquery-3.0.0.min.js"></script>
-    <script src="js/plugin.js"></script>
+    <script src="assets/bootstrap-slider/jquery.min.js"></script>
+    <script src="assets/bootstrap-slider/popper.min.js"></script>
+    <script src="assets/bootstrap-slider/bootstrap.bundle.min.js"></script>
+    <script src="assets/bootstrap-slider/jquery-3.0.0.min.js"></script>
+    <script src="assets/bootstrap-slider/plugin.js"></script>
     <!-- sidebar -->
-    <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
-    <script src="js/custom.js"></script>
+    <script src="assets/bootstrap-slider/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="assets/bootstrap-slider/custom.js"></script>
     <!-- javascript -->
-    <script src="js/owl.carousel.js"></script>
+    <script src="assets/bootstrap-slider/owl.carousel.js"></script>
+    <script src="assets/bootstrap-slider/about.js"></script>
     <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $(".fancybox").fancybox({
-                openEffect: "none",
-                closeEffect: "none"
-            });
-
-            $(".zoom").hover(function() {
-
-                $(this).addClass('transition');
-            }, function() {
-
-                $(this).removeClass('transition');
-            });
-        });
-    </script>
 </body>
-
 </html>

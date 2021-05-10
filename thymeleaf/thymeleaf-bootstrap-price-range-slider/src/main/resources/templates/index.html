@@ -66,7 +66,7 @@
                         <div class="limit-box">
                             <nav class="main-menu">
                                 <ul class="menu-area-main">
-                                    <li class="active"><a th:href="@{index.html}">Գլխավոր</a></li>
+                                    <li class="active"><a th:href="@{index}">Գլխավոր</a></li>
                                     <li><a th:href="@{about}">Մեր մասին</a></li>
                                     <li><a th:href="@{brand}"> Համակարգիչներ</a>
                                     </li>
@@ -134,61 +134,97 @@
 </section>
 
 
-<div class="about">
-    <div class="container">
-        <div class="row">
-            <div class="col-xl-5 col-lg-5 col-md-5 co-sm-l2">
-                <div class="about_img">
-                    <figure><img th:src="@{assets/bootstrap-slider/images/about.jpg}" alt="img"/></figure>
-                </div>
-            </div>
-            <div class="col-xl-7 col-lg-7 col-md-7 co-sm-l2">
-                <div class="about_box">
-                    <h3>Մեր մասին</h3>
+<!--<div class="about">-->
+<!--    <div class="container">-->
+<!--        <div class="row">-->
+<!--            <div class="col-xl-5 col-lg-5 col-md-5 co-sm-l2">-->
+<!--                <div class="about_img">-->
+<!--                    <figure><img th:src="@{assets/bootstrap-slider/images/about.jpg}" alt="img"/></figure>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="col-xl-7 col-lg-7 col-md-7 co-sm-l2">-->
+<!--                <div class="about_box">-->
+<!--                    <h3>Մեր մասին</h3>-->
 
-                    <p>ընկերության գործունեությունը սկիզբ է առել 2003 թվականի նոյեմբեր ամսին, երբ Երևանի Թումանյան
-                        փողոցում բացվեց ընկերության առաջին խանութը:</p>
-                </div>
+<!--                    <p>ընկերության գործունեությունը սկիզբ է առել 2003 թվականի նոյեմբեր ամսին, երբ Երևանի Թումանյան-->
+<!--                        փողոցում բացվեց ընկերության առաջին խանութը:</p>-->
+<!--                </div>-->
 
-            </div>
-        </div>
-    </div>
-</div>
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
 
+<!--<div class="brand">-->
+<!--    <div class="container">-->
+<!--        <div class="row">-->
+<!--            <div class="col-md-12">-->
+<!--                <div class="titlepage">-->
+<!--                    <h2>համակարգիչներ</h2>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+
+<!--    <form method="post" th:object="${priceRange}">-->
+<!--        <div class="form-group mt-5">-->
+<!--            <label for="priceRange">Filter products by price</label>-->
+<!--            <div class="form-control">-->
+<!--                <b class="mr-2">€ 10</b> <input id="priceRange" type="text" class="span2" value=""-->
+<!--                                                data-slider-min="1"-->
+<!--                                                data-slider-max="100000" data-slider-step="2"-->
+<!--                                                data-slider-value="[5,100000]" data-slider-tooltip="show"/> <b-->
+<!--                    class="ml-2">€ 100000</b>-->
+<!--                <input type="hidden" id="rangeMin" th:field="*{min}"/>-->
+<!--                <input type="hidden" id="rangeMax" th:field="*{max}"/>-->
+<!--            </div>-->
+<!--        </div>-->
+
+
+<!--        <div id="products" class="mb-3">-->
+<!--            <div th:replace="products :: list"></div>-->
+<!--        </div>-->
+
+<!--        <button class="btn btn-primary" type="submit">Submit form</button>-->
+<!--    </form>-->
+<!--</div>-->
 <!-- brand -->
-<div class="brand">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="titlepage">
-                    <h2>համակարգիչներ</h2>
+<footer>
+    <div id="contact" class="footer">
+        <div class="container">
+            <div class="row pdn-top-30">
+                <div class="col-md-12 ">
+                    <div class="footer-box">
+                        <div class="headinga">
+                            <h3>Հասցե</h3>
+                            <span>ՀՀ, ք. Երևան, Թումանյան 2,4</span>
+                            <p>(+374) 98000999
+                                <br>computers@gmail.com</p>
+                        </div>
+                        <ul class="location_icon">
+                            <li><a href="#"><i class="fa fa-facebook-f"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+
+                        </ul>
+                        <div class="menu-bottom">
+                            <ul class="link">
+                                <li><a href="#">Գլխավոր</a></li>
+                                <li><a href="#">Մեր մասին</a></li>
+
+                                <li><a href="#">Համակարգիչներ</a></li>
+                                <li><a href="#">Ակցիաներ</a></li>
+                                <li><a href="#"> Կապ</a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+
     </div>
+</footer>
 
-    <form method="post" th:object="${priceRange}">
-        <div class="form-group mt-5">
-            <label for="priceRange">Filter products by price</label>
-            <div class="form-control">
-                <b class="mr-2">€ 10</b> <input id="priceRange" type="text" class="span2" value=""
-                                                data-slider-min="1"
-                                                data-slider-max="100000" data-slider-step="2"
-                                                data-slider-value="[5,100000]" data-slider-tooltip="show"/> <b
-                    class="ml-2">€ 100000</b>
-                <input type="hidden" id="rangeMin" th:field="*{min}"/>
-                <input type="hidden" id="rangeMax" th:field="*{max}"/>
-            </div>
-        </div>
-
-
-        <div id="products" class="mb-3">
-            <div th:replace="products :: list"></div>
-        </div>
-
-        <button class="btn btn-primary" type="submit">Submit form</button>
-    </form>
-</div>
 </div>
 </div>
 </body>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <!-- basic -->
@@ -78,13 +78,15 @@
                             <div class="limit-box">
                                 <nav class="main-menu">
                                     <ul class="menu-area-main">
-                                        <li class="active"> <a href="index.html">Գլխավոր</a> </li>
-                                        <li> <a href="about.html">Մեր մասին</a> </li>
-                                        <li><a href="brand.html"> Համակարգիչներ</a></li>
-                                        <li><a href="special.html">Ակցիաներ</a></li>
-                                        <li><a href="contact.html">Կապ</a></li>
+                                        <li class="active"><a th:href="@{index}">Գլխավոր</a></li>
+                                        <li><a th:href="@{about}">Մեր մասին</a></li>
+                                        <li><a th:href="@{brand}"> Համակարգիչներ</a>
+                                        </li>
+                                        <li><a th:href="@{special}">Ակցիաներ</a></li>
+                                        <li><a th:href="@{contact}">Կապ</a></li>
                                         <li class="last">
-                                            <a href="#"><img src="assets/bootstrap-slider/images/search_icon.png" alt="icon" /></a>
+                                            <a href="#"><img th:src="@{assets/bootstrap-slider/images/search_icon.png}"
+                                                             alt="icon"/></a>
                                         </li>
                                     </ul>
                                 </nav>
