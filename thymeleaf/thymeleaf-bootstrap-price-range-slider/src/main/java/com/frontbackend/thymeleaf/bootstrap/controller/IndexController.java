@@ -33,4 +33,23 @@ public class IndexController {
         model.addAttribute("range", priceRange);
         return "saved";
     }
+
+    @GetMapping("/contact")
+    public String getContacts(){
+        return "contact";
+    }
+
+    @GetMapping("/special")
+    public String getSales(){
+        return "special";
+    }
+    @GetMapping("/brand")
+    public String getBrand(){
+        return "brand";
+    }
+
+    @GetMapping("/about")
+    public String getAboutInfo(){
+        return "about";
+    }
 }

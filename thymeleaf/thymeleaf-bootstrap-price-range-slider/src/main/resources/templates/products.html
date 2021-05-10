@@ -1,12 +1,12 @@
 <div class="row" th:fragment="list" xmlns:th="http://www.thymeleaf.org">
     <div th:each="computer, stat : ${products}" class="col-sm-4">
         <div class="card mb-3">
-            <div class="card-body">
+            <div class="card-body" style="display: flex; flex-direction: column">
                 <h5 class="card-title" th:text="${computer.model}">Product name</h5>
                 <p class="card-text" th:text="${computer.price}">Price</p>
                     <p class="card-text" th:text="${computer.RAM}">RAM</p>
 
-                <img alt="" th:src="${'data:image/jpeg;base64,'+{computer.picture}}" style="width: 100px;height: 100px;">
+                <img alt="" th:src="${'data:image/jpeg;base64,'+{computer.picture}}" style="width: 500px;height: 400px;object-fit: contain;">
                 <a href="#" class="btn btn-primary">Buy</a>
             </div>
         </div>

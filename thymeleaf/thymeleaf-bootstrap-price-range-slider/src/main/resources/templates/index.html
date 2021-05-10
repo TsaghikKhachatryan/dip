@@ -35,14 +35,16 @@
     <link th:rel="stylesheet" th:href="@{https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css}"/>
 
 
-    <link th:rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css}"/>
+    <link th:rel="stylesheet"
+          th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css}"/>
 
 
     <link th:rel="stylesheet" th:href="@{assets/bootstrap-slider/css/owl.carousel.min.css}"/>
 
     <link th:rel="stylesheet" th:href="@{assets/bootstrap-slider/css/owl.theme.default.min.css}"/>
 
-    <link th:rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css}" th:media="screen"/>
+    <link th:rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css}"
+          th:media="screen"/>
 
 
 </head>
@@ -65,12 +67,14 @@
                             <nav class="main-menu">
                                 <ul class="menu-area-main">
                                     <li class="active"><a th:href="@{index.html}">Գլխավոր</a></li>
-                                    <li><a th:href="@{assets/bootstrap-slider/templates/about.html}">Մեր մասին</a></li>
-                                    <li><a th:href="@{assets/bootstrap-slider/templates/brand.html}"> Համակարգիչներ</a></li>
-                                    <li><a th:href="@{assets/bootstrap-slider/templates/special.html}">Ակցիաներ</a></li>
-                                    <li><a th:href="@{assets/bootstrap-slider/templates/contact.html}">Կապ</a></li>
+                                    <li><a th:href="@{about}">Մեր մասին</a></li>
+                                    <li><a th:href="@{brand}"> Համակարգիչներ</a>
+                                    </li>
+                                    <li><a th:href="@{special}">Ակցիաներ</a></li>
+                                    <li><a th:href="@{contact}">Կապ</a></li>
                                     <li class="last">
-                                        <a href="#"><img th:src="@{assets/bootstrap-slider/images/search_icon.png}" alt="icon"/></a>
+                                        <a href="#"><img th:src="@{assets/bootstrap-slider/images/search_icon.png}"
+                                                         alt="icon"/></a>
                                     </li>
                                 </ul>
                             </nav>
@@ -163,13 +167,27 @@
         </div>
     </div>
 
-    <div id="products" class="mb-3">
-        <div th:replace="products :: list"></div>
-    </div>
+    <form method="post" th:object="${priceRange}">
+        <div class="form-group mt-5">
+            <label for="priceRange">Filter products by price</label>
+            <div class="form-control">
+                <b class="mr-2">€ 10</b> <input id="priceRange" type="text" class="span2" value=""
+                                                data-slider-min="1"
+                                                data-slider-max="100000" data-slider-step="2"
+                                                data-slider-value="[5,100000]" data-slider-tooltip="show"/> <b
+                    class="ml-2">€ 100000</b>
+                <input type="hidden" id="rangeMin" th:field="*{min}"/>
+                <input type="hidden" id="rangeMax" th:field="*{max}"/>
+            </div>
+        </div>
 
-    <button class="btn btn-primary" type="submit">Submit form</button>
+
+        <div id="products" class="mb-3">
+            <div th:replace="products :: list"></div>
+        </div>
+
+        <button class="btn btn-primary" type="submit">Submit form</button>
     </form>
-
 </div>
 </div>
 </div>
